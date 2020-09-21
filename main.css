@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&family=Permanent+Marker&family=Satisfy&display=swap');
+
+
+:root {
+  --image: url("https://images.pexels.com/photos/2884864/pexels-photo-2884864.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+
+  --dark: #212121;
+  --dark-transparent: #000000d0;
+  --light: #cccccc;
+  --light-transparent: #ffffff90;
+
+  --transition-duration: 0.5s;
+
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  color: var(--light);
+  font-family: "Bree Serif", sans-serif;
+  font-size: 1.5rem;
+  background-image: var(--image);
+  background-size: cover;
+  background-position: bottom;
+  transition: color var(--transition-duration);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+nav .brand {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 2rem;
+}
+
+nav ul {
+  display: flex;
+  height: 100%;
+  list-style: none;
+}
+
+nav ul li{
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+nav ul li:hover,
+nav .brand:hover {
+  background-color: var(--dark-transparent);
+}
+
+header {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--dark-transparent);
+  backdrop-filter: blur(0.1rem);
+  transition: background-color var(--transition-duration);
+}
+
+header h1{
+  font-size: 7rem;
+  letter-spacing: 0.5rem;
+  font-family: "Permanent Marker", sans-serif;
+}
+
+header p{
+  font-size: 3rem;
+  font-family: "Satisfy", sans-serif;
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 3rem;
+  font-size: 1.2rem;
+  word-spacing: 0.2rem;
+}
+
+body.light nav ul li:hover,
+body.light nav .brand:hover {
+  background-color: var(--light-transparent);
+}
+
+body.light {
+  color: var(--dark);
+}
+
+body.light header{
+  background-color: var(--light-transparent) ;
+}
